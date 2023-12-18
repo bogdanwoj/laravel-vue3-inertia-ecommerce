@@ -2,7 +2,7 @@
 <template>
     <nav class="bg-white border-gray-200 dark:bg-gray-900">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="#" class="flex items-center">
+            <Link :href="route('home')" class="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                      class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -10,11 +10,11 @@
                 </svg>
 
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Shop</span>
-            </a>
+            </Link>
             <div v-if="canLogin" class="flex items-center md:order-2">
                 <div class="mr-4">
 
-                    <button type="button"
+                    <Link :href="route('cart.view')" type="button"
                             class="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                              stroke="currentColor" class="w-6 h-6 ">
@@ -27,7 +27,7 @@
                             class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
                             {{cart.data.count}}
                         </div>
-                    </button>
+                    </Link>
 
 
                 </div>
@@ -98,9 +98,9 @@
                 <ul
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
-                        <a href="#"
+                        <Link :href="route('home')"
                            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                           aria-current="page">Home</a>
+                           aria-current="page">Home</Link>
                     </li>
                     <li>
                         <a href="#"

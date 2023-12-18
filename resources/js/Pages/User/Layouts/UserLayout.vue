@@ -5,10 +5,6 @@
     <Header> </Header>
 <!--    end header-->
 
-<!--    hero section -->
-    <Hero> </Hero>
-<!--    end hero section-->
-
 <!--    main content-->
     <slot />
 <!--    end main content-->

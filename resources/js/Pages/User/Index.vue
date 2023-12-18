@@ -1,6 +1,8 @@
 <template>
     <UserLayout>
-
+        <!--    hero section -->
+        <Hero> </Hero>
+        <!--    end hero section-->
         <div class="bg-white">
             <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
                 <h2 class="text-2xl font-bold tracking-tight text-gray-900">List of products</h2>
@@ -72,6 +74,8 @@
 import { onMounted } from 'vue';
 import { router, Link } from '@inertiajs/vue3';
 import UserLayout from './Layouts/UserLayout.vue';
+import Hero from './Layouts/Hero.vue';
+
 
 defineProps({
     products: Array

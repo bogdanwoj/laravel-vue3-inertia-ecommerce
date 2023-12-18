@@ -14,7 +14,7 @@
             if ($user = auth()->user()) {
                 return CartItem::whereUserId($user->id)->sum('quantity');
             }
-            return array_reduce(self::getCookieCartItems(), fn ($carry) => $carry + 1, 0);
+            return array_reduce(self::getCookieCartItems(), fn ($carry, $item) => $carry + $item['quantity'], 0);
         }
 
         public static function getCartItems()
