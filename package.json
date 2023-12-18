@@ -18,6 +18,8 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
+        "@headlessui/vue": "^1.7.16",
+        "@heroicons/vue": "^2.0.18",
         "element-plus": "^2.4.3",
         "flowbite": "^2.2.0",
         "sweetalert2": "^11.10.1",

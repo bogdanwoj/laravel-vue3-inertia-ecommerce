@@ -5,6 +5,7 @@
     use App\Http\Controllers\Admin\ProductController;
     use App\Http\Controllers\ProfileController;
     use App\Http\Controllers\User\CartController;
+    use App\Http\Controllers\User\ProductListController;
     use App\Http\Controllers\User\UserController;
     use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -42,7 +43,14 @@ use Inertia\Inertia;
         Route::delete('delete/{product}','delete')->name('cart.delete');
     });
 
+    //routes for products list and filter
+    Route::prefix('products')->controller(ProductListController::class)->group(function ()  {
+        Route::get('/','index')->name('products.index');
+
+    });
 //end
+
+
 
     Route::group(['prefix' => 'admin', 'middleware' => 'redirectAdmin'], function () {
         Route::get('login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
