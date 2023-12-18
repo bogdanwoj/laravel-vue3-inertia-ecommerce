@@ -23,6 +23,7 @@ use Inertia\Inertia;
 */
 
     Route::get('/', [UserController::class,'index'])->name('home');
+    Route::get('/indexCheapProducts', [UserController::class,'indexCheapProducts'])->name('indexCheapProducts');
 
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');

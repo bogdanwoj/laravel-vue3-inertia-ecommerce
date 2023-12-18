@@ -21,4 +21,16 @@ class UserController extends Controller
             'phpVersion' => PHP_VERSION,
         ]);
     }
+
+    public function indexCheapProducts()
+    {
+        $products = Product::with('brand', 'category', 'product_images')->orderBy('price', 'asc')->limit(8)->get();
+        return Inertia::render('User/IndexCheapProducts', [
+            'products' => $products,
+            'canLogin' => app('router')->has('login'),
+            'canRegister' => app('router')->has('register'),
+            'laravelVersion' => Application::VERSION,
+            'phpVersion' => PHP_VERSION,
+        ]);
+    }
 }
