@@ -5,6 +5,7 @@
     use App\Http\Controllers\Admin\ProductController;
     use App\Http\Controllers\ProfileController;
     use App\Http\Controllers\User\CartController;
+    use App\Http\Controllers\User\CheckoutController;
     use App\Http\Controllers\User\ProductListController;
     use App\Http\Controllers\User\UserController;
     use Illuminate\Foundation\Application;
@@ -33,6 +34,11 @@ use Inertia\Inertia;
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+        //checkout
+        Route::prefix('checkout')->controller(CheckoutController::class)->group(function () {
+            Route::post('order', 'store')->name('checkout.store');
+        });
     });
 
 //add to cart

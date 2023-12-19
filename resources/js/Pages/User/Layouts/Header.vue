@@ -1,6 +1,6 @@
 
 <template>
-    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <nav class="bg-green-50 border-gray-200 dark:bg-gray-900">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <Link :href="route('home')" class="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
