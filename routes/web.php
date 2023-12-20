@@ -26,6 +26,7 @@ use Inertia\Inertia;
 
     Route::get('/', [UserController::class,'index'])->name('home');
     Route::get('/indexCheapProducts', [UserController::class,'indexCheapProducts'])->name('indexCheapProducts');
+    Route::get('/product/{id}', [ProductController::class,'show'])->name('show');
 
     Route::get('/dashboard',[DashboardController::class, 'index']) ->middleware(['auth', 'verified'])->name('dashboard');
 

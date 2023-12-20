@@ -27,7 +27,7 @@
 
                     </div>
                     <div class="bg-blue-700 p-2 rounded-full ml-2">
-                        <a href="detail" >
+                        <Link :href="route('show', { id: product.id })">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -36,7 +36,7 @@
                                       d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
 
-                        </a>
+                        </Link>
 
 
                     </div>
@@ -60,7 +60,7 @@
 </template>
 
 <script setup>
-    import {router} from "@inertiajs/vue3";
+    import {router, Link} from "@inertiajs/vue3";
 
     defineProps({
         products: Array

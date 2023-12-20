@@ -21,6 +21,12 @@ class ProductController extends Controller
         return Inertia::render('Admin/Product/Index', ['products' => $products, 'brands' => $brands, 'categories' => $categories]);
     }
 
+    public function show($id){
+        $product = Product::with('category', 'brand', 'product_images')->findOrFail($id);
+
+        return Inertia::render('User/Product', ['product' => $product]);
+    }
+
     public function store(Request $request)
     {
         $product = new Product;
